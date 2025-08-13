@@ -5,8 +5,7 @@ import banner from "../../../assets/Infinitybanner.png";
 const Header = () => {
     return (
         <header
-            className="flex flex-col grad items-center justify-center min-h-[900px] max-h-[1800px] h-dvh bg-cover bg-left"
-            // style={{ backgroundImage: `url(${banner})` }}
+            className="flex flex-col banner-header items-center justify-center min-h-[900px] max-h-[1800px] h-dvh bg-cover bg-left"
         >
             <div className="flex flex-col items-center justify-center gap-9 pb-50">
                 <div className="flex flex-col items-center justify-center gap-7 text-shadow-md">

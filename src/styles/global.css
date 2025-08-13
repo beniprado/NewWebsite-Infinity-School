@@ -3,6 +3,7 @@
 
 * {
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 
@@ -20,8 +21,14 @@ body {
 }
 
 
-.grad {
+.banner-header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), black), url("../assets/Infinitybanner.png");
   background-size: cover;
   z-index: 999 !important;
-  }
+}
+
+.banner-resultados {
+   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), black), url("../assets/bannerResultados.png");
+  background-size: cover;
+  z-index: 999 !important;
+}

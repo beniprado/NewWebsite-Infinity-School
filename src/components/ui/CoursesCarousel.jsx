@@ -21,25 +21,19 @@ export default function CoursesCarousel() {
       img: "src/assets/marketing.png"
     },
     {
-      title: "Programação Avançada IA",
+      title: "Fotografia Design",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
       img: "src/assets/marketing.png"
     },
     {
-      title: "Programação Avançada IA",
+      title: "Film Design",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
       img: "src/assets/marketing.png"
     },
     {
-      title: "Programação Avançada IA",
-      category: "PROGRAMAÇÃO",
-      duration: "12 MESES",
-      img: "src/assets/marketing.png"
-    },
-    {
-      title: "Programação Avançada IA",
+      title: "Kids",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
       img: "src/assets/marketing.png"
