@@ -1,13 +1,14 @@
 import React from "react"
 import BtnInfo from "../ui/BtnInfo"
 import ListDropdown from "../ui/ListDropdown"
+import Logo from "../../assets/infinitylogo.png"
 
 const NavList = "text-lg font-medium cursor-pointer"
 
 const Navbar = () => {
   return (
     <nav className="flex items-center justify-between p-5 px-15">
-      <img src="logo" alt="logo" />
+      <img src={Logo} alt="logo" />
       <ul className="hidden xl:flex items-center gap-10">
         <li className={NavList}>Home</li>
         <li className={NavList}>Sobre</li>
@@ -15,16 +16,6 @@ const Navbar = () => {
           NavList={NavList}
           title={"Curso"}
           items={[
-            "Progamação Full Stack IA",
-            "Design Full Stack IA",
-            "Marketing Full Stack IA",
-            "Film Design"
-          ]}
-        />
-        <ListDropdown
-        NavList={NavList}
-        title={"Diferencial"} 
-        items={[
             "Progamação Full Stack IA",
             "Design Full Stack IA",
             "Marketing Full Stack IA",
