@@ -46,16 +46,16 @@ const Footer = () => {
               <h3 className="text-2xl font-medium">Nossas Redes</h3>
               <ul className={styleList}>
                   <a href="">
-                    <li className="flex gap-2"><IconBrandYoutube stroke={2} /> Youtube</li>
+                    <li className="flex items-center gap-2"><IconBrandYoutube stroke={2} /> Youtube</li>
                   </a>
                   <a href="">
-                    <li className="flex gap-2"><IconBrandInstagram stroke={2} /> Instagram</li>
+                    <li className="flex items-center gap-2"><IconBrandInstagram stroke={2} /> Instagram</li>
                   </a>
                   <a href="">
-                    <li className="flex gap-2"><IconBrandFacebook stroke={2} /> Facebook</li>
+                    <li className="flex items-center gap-2"><IconBrandFacebook stroke={2} /> Facebook</li>
                   </a>
                   <a href="">
-                    <li className="flex gap-2"><IconBrandLinkedin stroke={2} /> Linkedin</li>
+                    <li className="flex items-center gap-2"><IconBrandLinkedin stroke={2} /> Linkedin</li>
                   </a>
               </ul>
           </div>
