@@ -1,7 +1,7 @@
 import React from "react"
 import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin, IconBrandYoutube } from "@tabler/icons-react"
 import { Link } from "react-router-dom"
-import Logo from "../../assets/infinitylogo.png"
+import logo from "../../assets/logo.png"
 
 const styleContainer = "flex flex-col items-start justify-stat gap-5"
 const styleList = "m-0 p-0 flex flex-col gap-4 text-lg"
@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="flex flex-col justify-center pb-5 pt-10 gap-5">
       <div className="flex-col lg:flex-row flex gap-20 justify-center py-10 px-10 border-b-1 border-b-white">
         <div className="flex flex-col gap-5">
-          <img src={Logo} alt="logo" className="max-w-xs"/>
+          <img src={logo} alt="logo" className="max-w-xs"/>
           <div className="flex flex-col gap-3">
             <h3 className="text-2xl font-bold">Novidades e Lançamentos</h3>
             <div className="flex gap-2">
