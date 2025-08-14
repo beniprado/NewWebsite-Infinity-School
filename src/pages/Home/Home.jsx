@@ -6,7 +6,7 @@ import Desc from "./section/Desc";
 import Resultados from "./section/Resultados";
 import Avaliacoes from "./section/avaliacoes";
 import Cta from "../../components/ui/Cta";
-import Visita from "./section/visita";
+import Visita from "./section/Visita";
 
 const Home = () => {
     return <main className=" bg-black">
