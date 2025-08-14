@@ -4,6 +4,9 @@ import Metodologia from "./section/Metodologia";
 import Curso from "./section/Cursos";
 import Desc from "./section/Desc";
 import Resultados from "./section/Resultados";
+import Avaliacoes from "./section/avaliacoes";
+import Cta from "../../components/ui/Cta";
+import Visita from "./section/visita";
 
 const Home = () => {
     return <main className=" bg-black">
@@ -12,6 +15,9 @@ const Home = () => {
         <Curso />
         <Desc />
         <Resultados />
+        <Avaliacoes />
+        <Cta />
+        <Visita />
     </main>
 }
 
