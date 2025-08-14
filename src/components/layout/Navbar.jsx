@@ -1,7 +1,7 @@
 import React from "react"
 import BtnInfo from "../ui/BtnInfo"
 import ListDropdown from "../ui/ListDropdown"
-import Logo from "../../assets/Infinitylogo.png"
+import Logo from "../../assets/infinitylogo.png"
 
 const NavList = "text-lg font-medium cursor-pointer"
 
