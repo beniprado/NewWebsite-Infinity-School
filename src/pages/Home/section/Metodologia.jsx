@@ -1,5 +1,6 @@
 import React from "react";
 import BtnCta from "../../../components/ui/BtnCta";
+import video from "../../../assets/estrutura.mov"
 
 const Metodologia = () => {
     return (
@@ -12,7 +13,7 @@ const Metodologia = () => {
                     playsInline
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
                 >
-                    <source src="/src/assets/estrutura.mov" type="video/mp4" />
+                    <source src={video} type="video/mp4" />
                     Seu navegador não suporta vídeo HTML5.
                 </video>
             </div>

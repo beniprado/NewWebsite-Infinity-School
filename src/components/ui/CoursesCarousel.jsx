@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import marketing from "../../assets/marketing.png"
 
 export default function CoursesCarousel() {
   const courses = [
@@ -6,37 +7,37 @@ export default function CoursesCarousel() {
       title: "Programação Full Stack IA",
       category: "PROGRAMAÇÃO",
       duration: "13 MESES",
-      img: "src/assets/marketing.png"
+      img: marketing
     },
     {
       title: "Curso Design Full Stack IA",
       category: "MARKETING",
       duration: "13 MESES",
-      img: "src/assets/marketing.png"
+      img: marketing
     },
     {
       title: "Marketing Digital IA",
       category: "PROGRAMAÇÃO",
       duration: "10 MESES",
-      img: "src/assets/marketing.png"
+      img: marketing
     },
     {
       title: "Fotografia Design",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
-      img: "src/assets/marketing.png"
+      img: marketing
     },
     {
       title: "Film Design",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
-      img: "src/assets/marketing.png"
+      img: marketing
     },
     {
       title: "Kids",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
-      img: "src/assets/marketing.png"
+      img: marketing
     },
   ];
 
