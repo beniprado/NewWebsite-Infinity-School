@@ -1,6 +1,6 @@
 import React from "react";
 import BtnCta from "../../../components/ui/BtnCta";
-import video from "../../../assets/estrutura.mov"
+import video from "../../../assets/estrutura.mp4"
 
 const Metodologia = () => {
     return (
