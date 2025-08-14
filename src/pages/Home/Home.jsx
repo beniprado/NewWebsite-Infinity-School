@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./section/Header";
 import Metodologia from "./section/Metodologia";
 import Curso from "./section/Cursos";
-import Desc1 from "./section/desc1";
+import Desc from "./section/Desc";
 import Resultados from "./section/Resultados";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
         <Header />
         <Metodologia />
         <Curso />
-        <Desc1 />
+        <Desc />
         <Resultados />
     </main>
 }

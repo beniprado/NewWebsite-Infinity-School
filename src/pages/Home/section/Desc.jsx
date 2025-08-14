@@ -4,7 +4,7 @@ import { IconBook2, IconBriefcase, IconCertificate, IconSchool, IconTrophy, Icon
 
 const containerRow = "flex items-center justify-center gap-20"
 
-const Desc1 = () => {
+const Desc = () => {
     return <section className="py-15 flex">
         <div className="flex flex-col gap-25 py-25 px-15 m-auto">
         <h2 className="text-6xl font-bold">Diferenciais</h2>
@@ -22,4 +22,4 @@ const Desc1 = () => {
     </section>
 }
 
-export default Desc1
+export default Desc
