@@ -11,9 +11,9 @@ const Duvidas = () => {
             <div className="flex flex-col items-center justify-center gap-8">
                 <Accordion question={"Preciso ter conhecimento prévio para começar?"} answer={"Não! Temos cursos para todos os níveis, com suporte completo para você evoluir desde o início."}/>
                 <Accordion question={"Como funcionam as aulas presenciais?"} answer={"As aulas presenciais possuem interação direta e prática acompanhada por professores e monitores experientes para garantir o melhor aprendizado, tendo acesso a um ambiente acolhedor com equipam."}/>
-                <Accordion question={"Preciso ter conhecimento prévio para começar?"} answer={"Não! Temos cursos para todos os níveis, com suporte completo para você evoluir desde o início."}/>
-                <Accordion question={"Preciso ter conhecimento prévio para começar?"} answer={"Não! Temos cursos para todos os níveis, com suporte completo para você evoluir desde o início."}/>
-                <Accordion question={"Preciso ter conhecimento prévio para começar?"} answer={"Não! Temos cursos para todos os níveis, com suporte completo para você evoluir desde o início."}/>
+                <Accordion question={"O certificado vale para o mercado de trabalho?"} answer={"Sim, todos os cursos oferecem certificação reconhecida nacional e internacionalmente."}/>
+                <Accordion question={"Posso conciliar o curso com trabalho ou estudos?"} answer={"Sim, o curso é planejado para oferecer flexibilidade com horários que se adaptam à sua rotina."}/>
+                <Accordion question={"Quais oportunidades de carreira o Infinity oferece?"} answer={"Disponibilizamos uma aba exclusiva para vagas de emprego e freelas, conectando alunos a oportunidades reais nas áreas de programação, marketing, design e mais."}/>
             </div>
         </div>
     </section>

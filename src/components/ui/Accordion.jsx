@@ -7,7 +7,7 @@ const Accordion = ({ question, answer }) => {
   return (
     <div className="bg-gray-900 text-white rounded-xl shadow-md border border-gray-700 overflow-hidden transition-all duration-300">
       <button
-        className="flex justify-between items-center w-full p-4 focus:outline-none"
+        className="flex justify-between items-center w-full p-4 cursor-pointer focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-lg font-semibold">{question}</span>
@@ -24,7 +24,7 @@ const Accordion = ({ question, answer }) => {
           isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden`}
       >
-        <p className="px-4 pb-4 text-gray-300">{answer}</p>
+        <p className="px-4 pb-4 text-gray-300 max-w-lg">{answer}</p>
       </div>
     </div>
   );
