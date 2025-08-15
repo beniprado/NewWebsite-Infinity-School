@@ -10,7 +10,7 @@ const Header = () => {
             <div className="flex flex-col items-center justify-center gap-9 pb-50">
                 <div className="flex flex-col items-center justify-center gap-7 text-shadow-md">
                     <span className="m-auto uppercase text-4xl font-light text-shadow-md">Infinity School</span>
-                    <h1 className="text-8xl font-bold max-w-6xl text-center text-shadow-lg">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold max-w-6xl text-center text-shadow-lg">
                         O aprendizado que nunca tem fim
                     </h1>
                     <p className="text-xl max-w-xl text-center text-shadow-md">

@@ -88,7 +88,6 @@ const Avaliacoes = () => {
       </h2>
 
       <div className="relative w-full max-w-6xl">
-        {/* Área do slide */}
         <div className="overflow-hidden">
           <div
             className="flex transition-transform duration-500 will-change-transform"
@@ -110,7 +109,6 @@ const Avaliacoes = () => {
           </div>
         </div>
 
-        {/* Botões (somem no mobile) */}
         <button
           onClick={prevSlide}
           className="hidden sm:flex absolute -left-12 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition z-10 cursor-pointer"
@@ -125,7 +123,6 @@ const Avaliacoes = () => {
           <IconArrowRight stroke={2} size={28} color="black" />
         </button>
 
-        {/* Indicadores */}
         <div className="flex justify-center mt-6 gap-2">
           {reviews
             .slice(0, reviews.length - cardsPerView + 1)
