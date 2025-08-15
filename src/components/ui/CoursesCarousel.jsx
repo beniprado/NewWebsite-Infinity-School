@@ -75,7 +75,7 @@ export default function CoursesCarousel() {
       {courses.map((course, index) => (
         <div
           key={index}
-          className="flex-shrink-0 flex flex-col gap-7 w-[380px] bg-white p-5 text-black rounded-3xl overflow-hidden shadow-lg"
+          className="flex-shrink-0 flex flex-col gap-3 sm:gap-7 w-[95%] md:w-[380px] bg-white p-5 text-black rounded-3xl overflow-hidden shadow-lg"
         >
           <img
             src={course.img}
@@ -84,7 +84,7 @@ export default function CoursesCarousel() {
             draggable="false"
           />
           <div className="p-6">
-            <h3 className="font-bold text-3xl max-w-xs">{course.title}</h3>
+            <h3 className="font-bold text-2xl sm:text-3xl max-w-xs">{course.title}</h3>
             <div className="flex gap-3 mt-4 flex-wrap">
               <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm">
                 {course.category}

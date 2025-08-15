@@ -8,6 +8,7 @@ import Avaliacoes from "./section/avaliacoes";
 import Cta from "../../components/ui/Cta";
 import Visita from "./section/Visita";
 import Empresas from "./section/Empresas";
+import Duvidas from "./section/Duvidas";
 
 const Home = () => {
     return <main className=" bg-black">
@@ -20,6 +21,7 @@ const Home = () => {
         <Cta />
         <Visita />
         <Empresas />
+        <Duvidas />
     </main>
 }
 

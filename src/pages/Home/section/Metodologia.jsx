@@ -22,7 +22,7 @@ const Metodologia = () => {
 
             <div className="relative z-10 flex flex-col items-start gap-10 max-w-screen-xl">
                 <div className="flex flex-col gap-5">
-                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold max-w-5xl">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl">
                         Escola 100% Presencial com Metodologia Americana
                     </h2>
                     <p className="text-lg md:text-lg max-w-4xl">

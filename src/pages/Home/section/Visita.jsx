@@ -4,7 +4,7 @@ import BtnCta from "../../../components/ui/BtnCta";
 
 const Visita = () => {
     return <section className="flex justify-center py-15 px-5 lg:px-25">
-        <div className="flex flex-col max-w-xl lg:max-w-none lg:flex-row items-center justify-between w-full bg-[#121212] rounded-3xl ">
+        <div className="flex flex-col max-w-xl lg:max-w-5xl lg:flex-row items-center justify-between w-full bg-[#121212] rounded-3xl ">
             <img src={img} alt="Imagem da Infinity" className="w-full lg:max-w-md rounded-3xl object-cover"/>
             <div className="flex flex-col items-start justify-center gap-7 p-5 md:p-10">
                 <div className="flex flex-col gap-4">
