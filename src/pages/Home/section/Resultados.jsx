@@ -11,7 +11,7 @@ export function Date() {
 }
 
 const Resultados = () => {
-    return <section className="flex banner-resultados min-h-[900px] items-center justify-start py-25 px-45">
+    return <section className="flex banner-resultados min-h-[900px] items-center justify-start py-30 px-45">
         <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-5">
                 <h2 className="font-bold text-6xl">Nossos Resultados</h2>
