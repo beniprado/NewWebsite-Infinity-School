@@ -1,7 +1,7 @@
 import React from "react";
 
 export function Date() {
-    return <div className="flex flex-col items-center justify-center gap-2">
+    return <div className="flex flex-col justify-center gap-2">
             <span className="text-5xl font-bold">
                 +
                 40.000

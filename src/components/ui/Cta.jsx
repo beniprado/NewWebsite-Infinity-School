@@ -2,7 +2,7 @@ import React from "react";
 import BtnCta from "./BtnCta";
 
 const Cta = () => {
-    return <section className="py-35">
+    return <section className="py-35 px-10">
         <div className="flex flex-col items-center justify-center gap-8">
             <div className="flex items-center flex-col gap-8">
                 <h2 className="text-center max-w-4xl font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Do zero ao profissional: Seu próximo passo é aqui</h2>

@@ -7,7 +7,7 @@ const NavList = "text-lg font-medium cursor-pointer"
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between p-5 px-15">
+    <nav className="flex items-center justify-between py-5 px-4 md:px-15">
       <img src={logo} alt="logo" />
       <ul className="hidden xl:flex items-center gap-10">
         <li className={NavList}>Home</li>

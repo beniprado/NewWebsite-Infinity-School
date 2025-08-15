@@ -32,3 +32,9 @@ body {
   background-size: cover;
   z-index: 999 !important;
 }
+
+@media screen {
+  .banner-resultados {
+    background-position: right;
+  }
+}
