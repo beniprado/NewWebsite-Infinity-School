@@ -16,31 +16,31 @@ export default function CoursesCarousel() {
     },
     {
       title: "Curso Design Full Stack IA",
-      category: "MARKETING",
+      category: "Design",
       duration: "13 MESES",
       img: design
     },
     {
       title: "Marketing Digital IA",
-      category: "PROGRAMAÇÃO",
+      category: "MARKETING",
       duration: "10 MESES",
       img: marketing
     },
     {
       title: "Fotografia Design",
-      category: "PROGRAMAÇÃO",
-      duration: "12 MESES",
+      category: "FOTOGRAFIA",
+      duration: "9 MESES",
       img: fotografiaedesign
     },
     {
       title: "Film Design",
-      category: "PROGRAMAÇÃO",
-      duration: "12 MESES",
+      category: "FILM",
+      duration: "13 MESES",
       img: film
     },
     {
       title: "Kids",
-      category: "PROGRAMAÇÃO",
+      category: "DESIGN",
       duration: "12 MESES",
       img: kids
     },

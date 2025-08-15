@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"  // <-- IMPORTAR Link
 import BtnInfo from "../ui/BtnInfo"
 import ListDropdown from "../ui/ListDropdown"
 import logo from "../../assets/logo.png"
@@ -7,11 +8,15 @@ const NavList = "text-lg font-medium cursor-pointer hover:text-[#B91C0A] transit
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-5 px-3 md:px-15">
+    <nav className="flex items-center justify-between py-4 px-3 md:px-15">
       <img src={logo} alt="logo" />
       <ul className="hidden xl:flex items-center gap-10">
-        <li className={NavList}>Home</li>
-        <li className={NavList}>Sobre</li>
+        <li className={NavList}>
+          <Link to="/">Home</Link>
+        </li>
+        <li className={NavList}>
+          <Link to="/sobre">Sobre</Link>
+        </li>
         <ListDropdown
           NavList={NavList}
           title={"Curso"}
@@ -22,8 +27,12 @@ const Navbar = () => {
             "Film Design"
           ]}
         />
-        <li className={NavList}>Unidades</li>
-        <li className={NavList}>Contato</li>
+        <li className={NavList}>
+          <Link to="/unidades">Unidades</Link>
+        </li>
+        <li className={NavList}>
+          <Link to="/contato">Contato</Link>
+        </li>
       </ul>
       <div className="hidden md:block">
         <BtnInfo title={"Portal do Aluno"} bg={"9D1A1A"} hover={"6A0000"} cl={"white"} />
