@@ -1,12 +1,12 @@
 import React from "react";
 
-export function Date() {
+export function Date({date, desc}) {
     return <div className="flex flex-col justify-center gap-2">
             <span className="text-5xl font-bold">
                 +
-                40.000
+                {date}
             </span>
-            <p className="text-sm font-light">Alunos Formados</p>
+            <p className="text-sm font-light">{desc}</p>
         </div>
 }
 
@@ -18,9 +18,9 @@ const Resultados = () => {
                 <p className="max-w-2xl text-sm md:text-base">Números que mostram a qualidade e o impacto do nosso ensino e a transformação na vida dos nossos alunos.</p>
             </div>
             <div className="flex flex-col lg:flex-row gap-15">
-                <Date />
-                <Date />
-                <Date />
+                <Date date={"40.000"} desc={"Alunos Formados"}/>
+                <Date date={"23.000"} desc={"Alunos Ativos"}/>
+                <Date date={"380"} desc={"Turmas Ativas"}/>
             </div>
         </div>
 

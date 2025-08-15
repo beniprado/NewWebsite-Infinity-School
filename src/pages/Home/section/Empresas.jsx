@@ -4,7 +4,7 @@ import google from "../../../assets/google.png"
 import microsoft from "../../../assets/microsoft.png"
 
 const Empresas = () => {
-    return <section className="flex flex-col gap-25 py-30">
+    return <section className="flex flex-col gap-25 py-35">
         <h2 className="text-center font-bold text-3xl sm:text-4xl md:text-6xl">Empresas Parceiras</h2>
         <div className="flex items-center justify-center gap-35 flex-wrap px-15">
             <img src={adobe} alt="logo da Adobe" />
