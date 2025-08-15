@@ -1,5 +1,10 @@
 import { useRef, useState } from "react";
 import marketing from "../../assets/marketing.png"
+import progamacao from "../../assets/progamacao.png"
+import film from "../../assets/film.png"
+import fotografiaedesign from "../../assets/fotografiaedesign.png"
+import design from "../../assets/design.png"
+import kids from "../../assets/kids.png"
 
 export default function CoursesCarousel() {
   const courses = [
@@ -7,13 +12,13 @@ export default function CoursesCarousel() {
       title: "Programação Full Stack IA",
       category: "PROGRAMAÇÃO",
       duration: "13 MESES",
-      img: marketing
+      img: progamacao
     },
     {
       title: "Curso Design Full Stack IA",
       category: "MARKETING",
       duration: "13 MESES",
-      img: marketing
+      img: design
     },
     {
       title: "Marketing Digital IA",
@@ -25,19 +30,19 @@ export default function CoursesCarousel() {
       title: "Fotografia Design",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
-      img: marketing
+      img: fotografiaedesign
     },
     {
       title: "Film Design",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
-      img: marketing
+      img: film
     },
     {
       title: "Kids",
       category: "PROGRAMAÇÃO",
       duration: "12 MESES",
-      img: marketing
+      img: kids
     },
   ];
 
@@ -80,7 +85,7 @@ export default function CoursesCarousel() {
           <img
             src={course.img}
             alt={course.title}
-            className="w-full object-cover rounded-xl"
+            className="w-full  object-cover rounded-xl"
             draggable="false"
           />
           <div className="p-6">

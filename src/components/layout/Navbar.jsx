@@ -3,7 +3,7 @@ import BtnInfo from "../ui/BtnInfo"
 import ListDropdown from "../ui/ListDropdown"
 import logo from "../../assets/logo.png"
 
-const NavList = "text-lg font-medium cursor-pointer"
+const NavList = "text-lg font-medium cursor-pointer hover:text-[#B91C0A] transition duration-120"
 
 const Navbar = () => {
   return (
