@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Home from './pages/Home/Home'
 import Unidades from './pages/Unidades'
+import Cursos from './pages/Cursos/Cursos'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/> 
         <Route path="/sobre" element={""}/> 
+        <Route path="/cursos" element={<Cursos />}/> 
         <Route path="/unidades" element={<Unidades />}/> 
       </Routes>
       <Footer />

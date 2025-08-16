@@ -8,8 +8,8 @@ const NavList = "text-lg font-medium cursor-pointer hover:text-[#B91C0A] transit
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-4 px-3 md:px-15">
-      <img src={logo} alt="logo" />
+    <nav className="flex items-center justify-between py-4 px-3 md:px-15 bg-black">
+      <Link to="/"><img src={logo} alt="logo" /></Link>
       <ul className="hidden xl:flex items-center gap-10">
         <li className={NavList}>
           <Link to="/">Home</Link>
@@ -17,16 +17,18 @@ const Navbar = () => {
         <li className={NavList}>
           <Link to="/sobre">Sobre</Link>
         </li>
-        <ListDropdown
-          NavList={NavList}
-          title={"Curso"}
-          items={[
-            "Progamação Full Stack IA",
-            "Design Full Stack IA",
-            "Marketing Full Stack IA",
-            "Film Design"
-          ]}
-        />
+        <Link to="/cursos">
+          <ListDropdown
+            NavList={NavList}
+            title={"Curso"}
+            items={[
+              "Progamação Full Stack IA",
+              "Design Full Stack IA",
+              "Marketing Full Stack IA",
+              "Film Design"
+            ]}
+          />
+        </Link>
         <li className={NavList}>
           <Link to="/unidades">Unidades</Link>
         </li>

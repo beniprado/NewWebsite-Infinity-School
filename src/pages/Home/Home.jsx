@@ -11,7 +11,7 @@ import Empresas from "./section/Empresas";
 import Duvidas from "./section/Duvidas";
 
 const Home = () => {
-    return <main className=" bg-black">
+    return <main>
         <Header />
         <Metodologia />
         <Curso />

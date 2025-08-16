@@ -8,7 +8,7 @@ const styleList = "m-0 p-0 flex flex-col gap-4 text-lg"
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center pb-5 pt-10 gap-5">
+    <footer className="flex flex-col justify-center pb-5 pt-10 gap-5 bg-black">
       <div className="flex-col lg:flex-row flex gap-20 justify-center py-10 px-10 border-b-1 border-b-white">
         <div className="flex flex-col gap-5">
           <img src={logo} alt="logo" className="max-w-xs"/>
