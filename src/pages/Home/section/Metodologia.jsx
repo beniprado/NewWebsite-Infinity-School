@@ -1,10 +1,11 @@
 import React from "react";
 import BtnCta from "../../../components/ui/BtnCta";
 import video from "../../../assets/estrutura.mp4"
+import { Link } from "react-router-dom";
 
 const Metodologia = () => {
     return (
-        <section className="relative flex justify-center items-center py-20 px-6 overflow-hidden min-h-[800px] h-screen">
+        <section className="relative flex justify-center items-center py-20 px-6 overflow-hidden min-h-[800px] h-screen" id="descubra">
             <div className="bg-[#1a1a1af9]">
                 <video
                     autoPlay
@@ -29,7 +30,9 @@ const Metodologia = () => {
                         Somos uma escola internacionalmente certificada, com ensino presencial e voltado às necessidades profissionais do século XXI nas áreas de inovação e criatividade. Oferecemos uma experiência única para nossos alunos.
                     </p>
                 </div>
-                 <BtnCta title="Saiba Mais" font="3xl" py="3" px="10" />
+                 <Link to="/sobre">
+                     <BtnCta title="Saiba Mais" font="3xl" py="3" px="10" />
+                 </Link>
             </div>
         </section>
     );

@@ -37,7 +37,9 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="hidden md:block">
-        <BtnInfo title={"Portal do Aluno"} bg={"9D1A1A"} hover={"6A0000"} cl={"white"} />
+        <Link to="/login">
+          <BtnInfo title={"Portal do Aluno"} bg={"9D1A1A"} hover={"6A0000"} cl={"white"} />
+        </Link>
       </div>
     </nav>
   )

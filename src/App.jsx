@@ -5,6 +5,8 @@ import Footer from './components/layout/Footer'
 import Home from './pages/Home/Home'
 import Unidades from './pages/Unidades'
 import Cursos from './pages/Cursos/Cursos'
+import Login from './admin/login'
+import Privacidade from './pages/Privacidade'
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
         <Route path="/sobre" element={""}/> 
         <Route path="/cursos" element={<Cursos />}/> 
         <Route path="/unidades" element={<Unidades />}/> 
+        <Route path="/privacidade" element={<Privacidade />}/> 
+        <Route path="/login" element={<Login />}/> 
       </Routes>
       <Footer />
     </>

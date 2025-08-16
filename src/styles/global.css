@@ -2,8 +2,9 @@
 @import "tailwindcss";
 
 * {
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  user-select: none;
 }
 
 

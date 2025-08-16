@@ -18,7 +18,7 @@ const Footer = () => {
               <input type="text" name="Email" id="" placeholder="Email" className="border w-[60%] py-2 px-2 rounded-2 focus-visible:outline-none rounded-md"/>
               <input type="submit" value="Enviar" className="py-2 px-4 rounded-lg cursor-pointer font-medium hover:bg-white hover:text-black border transition duration-120"/>
             </div>
-            <p className="max-w-xl text-sm">Ao assinar, você concorda com nossa <Link>Políticas de Privacidade</Link>  e fornece consentimento para receber atualizações de nossa empresa.</p>
+            <p className="max-w-xl text-sm">Ao assinar, você concorda com nossa <a href="/privacidade" className="font-bold underline">Políticas de Privacidade</a>  e fornece consentimento para receber atualizações de nossa empresa.</p>
           </div>
         </div>
         <div className="flex-col lg:flex-row flex gap-20">
@@ -48,7 +48,7 @@ const Footer = () => {
                   <a href="">
                     <li className="flex items-center gap-2"><IconBrandYoutube stroke={2} /> Youtube</li>
                   </a>
-                  <a href="">
+                  <a href="https://www.instagram.com/infinity.school/" target="_blank">
                     <li className="flex items-center gap-2"><IconBrandInstagram stroke={2} /> Instagram</li>
                   </a>
                   <a href="">
@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="flex sm:flex-row flex-row justify-between items-center max-w-7xl m-auto px-3">
           <p>
             © 2025 Infinity. Todos seus direitos reservados. Feito por <a href="https://www.momple.com.br/"   className="font-bold" target="_blank">Momple</a>
-          </p> <Link>Políticas de Privacidade</Link>
+          </p> <a href="/privacidade" className="font-bold underline">Políticas de Privacidade</a>
         </div>
       </div>
     </footer>

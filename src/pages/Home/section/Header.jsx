@@ -15,7 +15,9 @@ const Header = () => {
                         Transforme conhecimento em oportunidades e esteja sempre pronto para o futuro da tecnologia.
                     </p>
                 </div>
-                <BtnCta title={"Quero Começar!"} font={"3xl"} py={"3"} px={"10"} />
+                <a href="#descubra">
+                    <BtnCta title={"Descubra o Caminho"} font={"3xl"} py={"3"} px={"10"} />
+                </a>
             </div>
         </header>
     );
