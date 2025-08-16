@@ -1,6 +1,7 @@
 import React from "react";
 import img from "../../../assets/visitainfinity.png"
 import BtnCta from "../../../components/ui/BtnCta";
+import { Link } from "react-router-dom";
 
 const Visita = () => {
     return <section className="flex justify-center py-15 px-5 lg:px-25">
@@ -11,7 +12,9 @@ const Visita = () => {
                     <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-none lg:leading-14 max-w-lg font-bold">Faça uma visita e conheça melhor nossa escola!</h2>
                     <p className="max-w-xl">Agende uma visita, conheça nosso espaço e equipe, e descubra como nosso método inovador pode transformar sua carreira.</p>
                 </div>
-                <BtnCta title={"Agendar Visita"} font={"xl"} py={"3"} px={"10"}/>
+                <Link to="/contato">
+                    <BtnCta title={"Agendar Visita"} font={"xl"} py={"3"} px={"10"}/>
+                </Link>
             </div>
         </div>
     </section>

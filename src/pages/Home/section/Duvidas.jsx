@@ -1,6 +1,7 @@
 import React from "react";
 import Accordion from "../../../components/ui/Accordion";
 import BtnCta from "../../../components/ui/BtnCta";
+import { Link } from "react-router-dom";
 
 const Duvidas = () => {
     return <section className="py-15 px-5">
@@ -21,7 +22,9 @@ const Duvidas = () => {
                     <h3 className="text-3xl text-center font-bold">Alguma Dúvida</h3>
                     <p className="text-center max-w-xs">Clique no botão abaixo e escolha a melhor forma de contato</p>
                 </div>
-                <BtnCta font={"xl"} title={"Fale Conosco"} px={"5"} py={"2"}/>
+                <Link to="/contato">
+                    <BtnCta font={"xl"} title={"Fale Conosco"} px={"5"} py={"2"}/>
+                </Link>
             </div>
         </div>
     </section>
