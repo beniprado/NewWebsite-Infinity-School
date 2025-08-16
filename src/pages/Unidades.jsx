@@ -38,6 +38,15 @@ const unidadesData = [
     complemento: "Dentro do Riomar Trade Center, perto da Subestação Shopping Rio Mar.",
     mapaSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492.0707402390939!2d-38.501745050084196!3d-3.735720928423476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74935a972112f%3A0xbadbb412697ea625!2sInfinity%20School%20Fortaleza!5e1!3m2!1spt-BR!2sbr!4v1755314885541!5m2!1spt-BR!2sbr",
     link: "https://maps.app.goo.gl/GGeFvPhxoME5ayBv9"
+  },
+  {
+    nome: "Unidade São Paulo",
+    descricao: "Sua escola está localizada na Av. Paulista. Possuindo segurança especializada.",
+    titulo: "Edifício Viking",
+    endereco: "Av. Paulista, 777 - Jardim Paulista, São Paulo - SP, 01311-100",
+    complemento: "Ao lado da Estação Brigadeiro, na linha verde do metrô.",
+    mapaSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.435827854713!2d-46.655544821598866!3d-23.566800607096408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5990f2080591%3A0xc281ee26d6fa28a7!2sInfinity%20School%20S%C3%A3o%20Paulo!5e1!3m2!1spt-BR!2sbr!4v1755356477475!5m2!1spt-BR!2sbr",
+    link: "https://maps.app.goo.gl/2DwYjWL5S42zSuj59"
   }
 ];
 

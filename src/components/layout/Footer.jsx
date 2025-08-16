@@ -45,16 +45,16 @@ const Footer = () => {
           <div className={styleContainer}>
               <h3 className="text-2xl font-medium">Nossas Redes</h3>
               <ul className={styleList}>
-                  <a href="">
+                  <a href="https://www.youtube.com/@infinityschool1421" target="_blank">
                     <li className="flex items-center gap-2"><IconBrandYoutube stroke={2} /> Youtube</li>
                   </a>
                   <a href="https://www.instagram.com/infinity.school/" target="_blank">
                     <li className="flex items-center gap-2"><IconBrandInstagram stroke={2} /> Instagram</li>
                   </a>
-                  <a href="">
+                  <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Finfinityschoolcg%2F" target="_blank">
                     <li className="flex items-center gap-2"><IconBrandFacebook stroke={2} /> Facebook</li>
                   </a>
-                  <a href="">
+                  <a href="https://www.linkedin.com/company/infinityschool/" target="_blank">
                     <li className="flex items-center gap-2"><IconBrandLinkedin stroke={2} /> Linkedin</li>
                   </a>
               </ul>
