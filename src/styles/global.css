@@ -26,6 +26,7 @@ body {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), black), url("../assets/Infinitybanner.png");
   background-size: cover;
   z-index: 999 !important;
+  /* background-attachment: scroll; */
 }
 
 .banner-resultados {

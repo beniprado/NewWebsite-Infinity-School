@@ -8,7 +8,7 @@ const styleList = "m-0 p-0 flex flex-col gap-4 text-lg"
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center pb-5 pt-10 gap-5 bg-black">
+    <footer className="flex flex-col justify-center pb-5 pt-10 gap-5 bg-[#1A1A1A]">
       <div className="flex-col lg:flex-row flex gap-20 justify-center py-10 px-10 border-b-1 border-b-white">
         <div className="flex flex-col gap-5">
           <img src={logo} alt="logo" className="max-w-xs"/>
@@ -62,7 +62,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <div className="flex sm:flex-row flex-row justify-between items-center max-w-7xl m-auto px-3">
+        <div className="flex flex-col items-baseline sm:flex-row justify-between sm:items-center max-w-7xl m-auto px-3 gap-2">
           <p>
             © 2025 Infinity. Todos seus direitos reservados. Feito por <a href="https://www.momple.com.br/"   className="font-bold" target="_blank">Momple</a>
           </p> <a href="/privacidade" className="font-bold underline">Políticas de Privacidade</a>
