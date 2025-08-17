@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { IconMail, IconBrandWhatsapp, IconPhone } from "@tabler/icons-react";
 
-// BlockInfo estilizado como card
 const BlockInfo = ({ icon, title, desc, link }) => {
   return (
     <a
@@ -10,14 +9,14 @@ const BlockInfo = ({ icon, title, desc, link }) => {
       rel="noopener noreferrer"
       className="flex flex-col items-center text-center bg-zinc-800 rounded-xl p-6 border border-zinc-700 shadow-md hover:shadow-lg transition-shadow duration-300 no-underline"
     >
-      <div className="text-4xl mb-3 text-[#ff5e3a]">{icon}</div>
+      <div className="text-4xl mb-3 text-[#9D1A1A]">{icon}</div>
       <h3 className="text-lg font-semibold mb-1 text-white">{title}</h3>
       <p className="text-zinc-300">{desc}</p>
     </a>
   );
 };
 
-const accentColor = "#ff5e3a";
+const accentColor = "#9D1A1A";
 
 const inputBaseClass =
   "w-full p-3 bg-zinc-800 text-white border rounded-md focus:outline-none transition";
@@ -74,7 +73,7 @@ const Contato = () => {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 text-white bg-zinc-900 min-h-screen flex items-center">
+    <section className="py-16 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 text-white min-h-screen flex items-center">
       <div className="max-w-3xl w-full mx-auto">
         <div className="mb-12">
           <h2 className="font-extrabold text-3xl sm:text-4xl md:text-5xl">
@@ -101,7 +100,7 @@ const Contato = () => {
               id="nome"
               name="nome"
               placeholder="Digite seu nome"
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#ff5e3a] ${
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
                 errors.nome ? "border-red-500" : ""
               }`}
               value={formData.nome}
@@ -122,7 +121,7 @@ const Contato = () => {
               id="email"
               name="email"
               placeholder="exemplo@dominio.com"
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#ff5e3a] ${
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
                 errors.email ? "border-red-500" : ""
               }`}
               value={formData.email}
@@ -143,7 +142,7 @@ const Contato = () => {
               id="whatsapp"
               name="whatsapp"
               placeholder="(00) 00000-0000"
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#ff5e3a] ${
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
                 errors.whatsapp ? "border-red-500" : ""
               }`}
               value={formData.whatsapp}
@@ -166,7 +165,7 @@ const Contato = () => {
               name="mensagem"
               rows="4"
               placeholder="Escreva sua mensagem aqui..."
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#ff5e3a] ${
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
                 errors.mensagem ? "border-red-500" : ""
               }`}
               value={formData.mensagem}
@@ -185,7 +184,7 @@ const Contato = () => {
               boxShadow: "0 4px 10px rgba(255, 94, 58, 0.4)",
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = "#e0482a";
+              e.currentTarget.style.backgroundColor = "#9D1A10";
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.backgroundColor = accentColor;

@@ -28,6 +28,7 @@ const Footer = () => {
                   <li className="cursor-pointer">Progamação Full Stack IA</li>
                   <li className="cursor-pointer">Marketing Digital IA</li>
                   <li className="cursor-pointer">Design Full Stack IA</li>
+                  <li className="cursor-pointer">Fotografia Design</li>
                   <li className="cursor-pointer">Film Design</li>
                   <li className="cursor-pointer">Kids</li>
               </ul>

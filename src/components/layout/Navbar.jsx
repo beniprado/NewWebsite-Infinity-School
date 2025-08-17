@@ -1,15 +1,16 @@
 import React from "react"
-import { Link } from "react-router-dom"  // <-- IMPORTAR Link
+import { Link } from "react-router-dom" 
 import BtnInfo from "../ui/BtnInfo"
 import ListDropdown from "../ui/ListDropdown"
 import logo from "../../assets/logo.png"
+import MobileNav from "./MobileNav"
 
 const NavList = "text-lg font-medium cursor-pointer hover:text-[#B91C0A] transition duration-120"
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-4 px-3 md:px-15 bg-[#1A1A1A]">
-      <Link to="/"><img src={logo} alt="logo" /></Link>
+    <nav className="flex items-center justify-between py-2 md:py-4 px-5 md:px-15 bg-[#1A1A1A]">
+      <Link to="/"><img src={logo} alt="logo" className=":h-[35px] sm:h-[50px]"/></Link>
       <ul className="hidden xl:flex items-center gap-10">
         <li className={NavList}>
           <Link to="/">Home</Link>
@@ -25,7 +26,8 @@ const Navbar = () => {
               "Progamação Full Stack IA",
               "Design Full Stack IA",
               "Marketing Full Stack IA",
-              "Film Design"
+              "Fotografia Design",
+              "Film Design",
             ]}
           />
         </Link>
@@ -41,6 +43,7 @@ const Navbar = () => {
           <BtnInfo title={"Portal do Aluno"} bg={"9D1A1A"} hover={"6A0000"} cl={"white"} />
         </Link>
       </div>
+        <MobileNav />
     </nav>
   )
 }

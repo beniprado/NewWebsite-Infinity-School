@@ -32,15 +32,15 @@ const Header = () => {
       ref={headerRef}
       className="flex flex-col banner-header items-center justify-start py-25 min-h-[900px] max-h-[1800px] h-dvh bg-cover bg-left opacity-0"
     >
-      <div className="flex flex-col items-center justify-center gap-9">
-        <div className="flex flex-col items-center justify-center gap-7 text-shadow-md">
-          <span className="m-auto uppercase text-4xl font-light text-shadow-md">
+      <div className="flex flex-col items-start sm:items-center justify-center gap-9 px-5">
+        <div className="flex flex-col text-start sm:items-center justify-center gap-7 text-shadow-md">
+          <span className="sm:m-auto uppercase text-2xl md:text-4xl font-light text-shadow-md">
             Infinity School
           </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold max-w-6xl text-center text-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold max-w-6xl  text-start sm:text-center text-shadow-lg">
             O aprendizado que nunca tem fim
           </h1>
-          <p className="text-xl max-w-xl text-center text-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl max-w-xl sm:text-center text-shadow-md">
             Transforme conhecimento em oportunidades e esteja sempre pronto
             para o futuro da tecnologia.
           </p>

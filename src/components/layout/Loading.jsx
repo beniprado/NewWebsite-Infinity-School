@@ -7,49 +7,65 @@ const Loading = ({ onFinish }) => {
   const containerRef = useRef(null)
   const blockLogoRef = useRef(null)
   const escLogoRef = useRef(null)
+  const byMompleRef = useRef(null)
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      defaults: { ease: 'power3.out' },
-      onComplete: () => {
-        setTimeout(() => {
-          gsap.to(containerRef.current, {
-            opacity: 0,
-            scale: 0.95,
-            filter: 'blur(10px)',
-            duration: 1.2,
-            ease: 'power2.inOut',
-            onComplete: () => {
-              if (onFinish) onFinish()
-            }
-          })
-        }, 3000)
-      }
-    })
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-    gsap.set([blockLogoRef.current, escLogoRef.current], { opacity: 0 })
+    gsap.set([blockLogoRef.current, escLogoRef.current, byMompleRef.current], { opacity: 0 })
 
     tl.fromTo(
       blockLogoRef.current,
       { scale: 0.7, opacity: 0, filter: 'blur(10px)' },
-      { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 1.2 }
+      { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.9 }
     )
 
     tl.fromTo(
       escLogoRef.current,
       { x: 60, opacity: 0, filter: 'blur(10px)' },
-      { x: 0, opacity: 1, filter: 'blur(0px)', duration: 1.2 },
-      '-=0.6'
+      { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.9 },
+      '-=0.4'
     )
 
-    gsap.to([blockLogoRef.current, escLogoRef.current], {
-      scale: 1.04,
-      repeat: -1,
-      yoyo: true,
-      duration: 2.5,
-      ease: 'sine.inOut'
-    })
-  }, [onFinish])
+    tl.to(byMompleRef.current, { opacity: 1, duration: 0.6 }, '-=0.6')
+
+    tl.to(
+      [blockLogoRef.current, escLogoRef.current],
+      {
+        scale: 1.04,
+        repeat: -1,
+        yoyo: true,
+        duration: 1.5,
+        ease: 'sine.inOut'
+      },
+      '+=0.4'
+    )
+
+    tl.to(
+      containerRef.current,
+      {
+        opacity: 0,
+        scale: 0.95,
+        filter: 'blur(10px)',
+        duration: 0.8,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          if (onFinish) onFinish()
+        }
+      },
+      '+=1.2'
+    )
+
+    return () => {
+      tl.kill()
+      gsap.killTweensOf([
+        blockLogoRef.current,
+        escLogoRef.current,
+        byMompleRef.current,
+        containerRef.current
+      ])
+    }
+  }, [])
 
   return (
     <section
@@ -69,6 +85,12 @@ const Loading = ({ onFinish }) => {
           alt="Logo Escrita"
           className="w-[clamp(160px,35vw,380px)] max-w-[380px] h-auto"
         />
+        <span
+          ref={byMompleRef}
+          className="text-xs opacity-0 transition-opacity"
+        >
+          By <strong>Momple</strong>
+        </span>
       </div>
     </section>
   )
