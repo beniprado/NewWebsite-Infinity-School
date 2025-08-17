@@ -8,7 +8,7 @@ const NavList = "text-lg font-medium cursor-pointer hover:text-[#B91C0A] transit
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-4 px-3 md:px-15 bg-black">
+    <nav className="flex items-center justify-between py-4 px-3 md:px-15 bg-[#1A1A1A]">
       <Link to="/"><img src={logo} alt="logo" /></Link>
       <ul className="hidden xl:flex items-center gap-10">
         <li className={NavList}>
