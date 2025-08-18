@@ -204,14 +204,14 @@ const Contato = () => {
           <BlockInfo
             icon={<IconBrandWhatsapp size={40} stroke={1.5} />}
             title="WhatsApp"
-            desc="(00) 91234-5678"
-            link="https://wa.me/5500912345678"
+            desc="(71) 9939-2884"
+            link="https://wa.me/557199392884"
           />
           <BlockInfo
             icon={<IconPhone size={40} stroke={1.5} />}
             title="Telefone"
-            desc="(00) 1234-5678"
-            link="tel:+550012345678"
+            desc="0800 180 0001"
+            link="tel:0800 180 0001"
           />
         </div>
       </div>

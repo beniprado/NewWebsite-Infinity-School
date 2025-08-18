@@ -1,31 +1,33 @@
-import React from "react";
-import banner from "../../assets/bannercursos.png";
-import progamacao from "../../assets/progamacao.png";
-import design from "../../assets/design.png";
-import marketing from "../../assets/marketing.png"; 
-import film from "../../assets/film.png"; 
-import BtnCta from "../../components/ui/BtnCta";
+import React from "react"
+import banner from "../../assets/bannercursos.png"
+import progamacao from "../../assets/progamacao.png"
+import design from "../../assets/design.png"
+import marketing from "../../assets/marketing.png"
+import fotografiaedesign from "../../assets/fotografiaedesign.png"
+import film from "../../assets/film.png"
+import kids from "../../assets/kids.png"
+import BtnCta from "../../components/ui/BtnCta"
 
 export function ContainerCursos({ title, about, description, img }) {
   return (
-    <div className="flex py-10 px-8">
-      <div className="flex items-center gap-10 max-w-7xl mx-auto">
+    <div className="flex py-10 px-4 md:px-8">
+      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 max-w-7xl mx-auto">
         <img
           src={img}
           alt={`Imagem do curso ${title}`}
-          className="w-md rounded-4xl max-w-sm"
+          className="w-full md:w-md rounded-4xl max-w-xs md:max-w-sm"
         />
-        <div className="flex flex-col gap-10 items-baseline justify-center">
-          <div className="flex flex-col gap-5">
-            <h2 className="font-bold text-6xl max-w-2xl">{title}</h2>
-            <span className="text-4xl">{about}</span>
-            <p className="max-w-lg text-lg">{description}</p>
+        <div className="flex flex-col gap-6 md:gap-10 items-center md:items-start justify-center text-center md:text-left">
+          <div className="flex flex-col gap-3 md:gap-5">
+            <h2 className="font-bold text-3xl md:text-6xl max-w-2xl">{title}</h2>
+            <span className="text-xl md:text-4xl">{about}</span>
+            <p className="max-w-lg text-base md:text-lg">{description}</p>
           </div>
-          <BtnCta title={"Saiba Mais"} py={"2"} px={"8"} />
+          <BtnCta title={"Fale Conosco"} py={"2"} px={"8"} />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 const cursosData = [
@@ -55,12 +57,26 @@ const cursosData = [
   },
   {
     id: 3,
-    img: film, 
+    img: fotografiaedesign,
+    title: "Curso Fotografia Design",
+    about: "Curso presencial / 9 meses",
+    description: "Torne-se um Diretor de Fotografia profissional",
+  },
+  {
+    id: 4,
+    img: film,
     title: "Curso Film Design IA",
     about: "Curso presencial / 13 meses",
-    description: "Captura, Edição e Motion Graphics para Vídeos"
-  }
-];
+    description: "Captura, Edição e Motion Graphics para Vídeos",
+  },
+  {
+    id: 5,
+    img: kids,
+    title: "Curso Kids",
+    about: "Curso presencial / 12 meses",
+    description: "Programação, criação de games, design e youtuber",
+  },
+]
 
 const Cursos = () => {
   return (
@@ -68,9 +84,9 @@ const Cursos = () => {
       <img
         src={banner}
         alt="Banner principal dos cursos"
-        className="w-full h-[450px] max-w-full object-cover object-center"
+        className="w-full h-[250px] md:h-[450px] max-w-full object-cover object-center"
       />
-      <div className="flex flex-col items-center justify-center py-15">
+      <div className="flex flex-col items-center justify-center py-10">
         {cursosData.map((curso) => (
           <ContainerCursos
             key={curso.id}
@@ -82,7 +98,7 @@ const Cursos = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Cursos;
+export default Cursos
