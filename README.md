@@ -85,24 +85,6 @@ http://localhost:5173
 
 ---
 
-## 🖼 Prints / Telas de Cada Página
-
-> Substitua os caminhos abaixo pelas imagens reais do seu projeto:
-
-- **Página Inicial**
-  - ![Página Inicial](caminho/para/imagem-home.png)
-
-- **Página de Cursos**
-  - ![Página de Cursos](caminho/para/imagem-cursos.png)
-
-- **Página Sobre**
-  - ![Página Sobre](caminho/para/imagem-sobre.png)
-
-- **Página de Contato**
-  - ![Página de Contato](caminho/para/imagem-contato.png)
-
----
-
 ## ⚙ Explicação Técnica
 
 ### 🔁 Fluxo do App
