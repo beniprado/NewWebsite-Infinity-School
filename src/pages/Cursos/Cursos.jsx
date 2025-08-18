@@ -8,6 +8,7 @@ import film from "../../assets/film.png"
 import kids from "../../assets/kids.png"
 import BtnCta from "../../components/ui/BtnCta"
 import Gamificacao from "./gamificacao"
+import { Link } from "react-router-dom"
 
 export function ContainerCursos({ title, about, description, img }) {
   return (
@@ -24,7 +25,9 @@ export function ContainerCursos({ title, about, description, img }) {
             <span className="text-xl md:text-4xl">{about}</span>
             <p className="max-w-lg text-base md:text-lg">{description}</p>
           </div>
-          <BtnCta title={"Fale Conosco"} py={"2"} px={"8"} />
+          <Link to="/contato">
+              <BtnCta title={"Fale Conosco"} py={"2"} px={"8"} />
+          </Link>
         </div>
       </div>
     </div>

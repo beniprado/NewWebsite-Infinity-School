@@ -1,18 +1,63 @@
 import { useState } from 'react';
+import {
+  getLoginUsuario,
+  getLoginSenha,
+} from "../services/api";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const validateCredentials = async (inputEmail, inputPassword) => {
+    try {
+      const totalUsuarios = 5;
+
+      for (let id = 1; id <= totalUsuarios; id++) {
+        const usuarioData = await getLoginUsuario(id);
+        const senhaData = await getLoginSenha(id);
+
+        if (usuarioData?.login && senhaData?.senha) {
+          if (usuarioData.login === inputEmail && senhaData.senha === inputPassword) {
+            return { success: true, userId: id };
+          }
+        }
+      }
+
+      return { success: false };
+    } catch (err) {
+      console.error("Erro ao validar credenciais:", err);
+      return { success: false, error: "Erro interno do servidor" };
+    }
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
+
     if (!email || !password) {
       setError('Preencha todos os campos');
       return;
     }
-    alert(`Logado com: ${email}`);
+
+    setLoading(true);
     setError('');
+
+    try {
+      const result = await validateCredentials(email, password);
+
+      if (result.success) {
+        alert(`Login realizado com sucesso! Usuário: ${email}`);
+        setError('');
+      } else {
+        setError(result.error || 'Email ou senha incorretos');
+      }
+    } catch (err) {
+      console.error("Erro no login:", err);
+      setError('Erro interno. Tente novamente.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -28,6 +73,7 @@ export default function Login() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              disabled={loading}
             />
           </div>
           <div>
@@ -37,13 +83,19 @@ export default function Login() {
               placeholder="Senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              disabled={loading}
             />
           </div>
           <button
             type="submit"
-            className="w-full cursor-pointer bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md transition"
+            disabled={loading}
+            className={`w-full font-semibold py-2 rounded-md transition ${
+              loading 
+                ? 'bg-gray-600 cursor-not-allowed text-gray-400' 
+                : 'bg-red-600 hover:bg-red-700 text-white cursor-pointer'
+            }`}
           >
-            Entrar
+            {loading ? 'Entrando...' : 'Entrar'}
           </button>
         </form>
         <p className="text-xs text-center text-zinc-400 mt-6">
