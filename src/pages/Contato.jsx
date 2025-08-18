@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IconMail, IconBrandWhatsapp, IconPhone } from "@tabler/icons-react";
+import { IconMail, IconBrandWhatsapp, IconPhone, IconCheck, IconX } from "@tabler/icons-react";
 
 const BlockInfo = ({ icon, title, desc, link }) => {
   return (
@@ -30,11 +30,13 @@ const Contato = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
+    setStatus(null);
   };
 
   const validate = () => {
@@ -60,7 +62,7 @@ const Contato = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const validationErrors = validate();
@@ -69,7 +71,30 @@ const Contato = () => {
       return;
     }
 
-    alert("Formulário enviado com sucesso!");
+    try {
+      const response = await fetch("https://formspree.io/f/mdkdvldn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          nome: "",
+          email: "",
+          whatsapp: "",
+          mensagem: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -89,10 +114,7 @@ const Contato = () => {
           className="flex flex-col gap-6 bg-zinc-800 p-6 sm:p-8 rounded-xl shadow-xl border border-zinc-700"
         >
           <div>
-            <label
-              htmlFor="nome"
-              className="block text-sm font-medium mb-1 text-zinc-300"
-            >
+            <label htmlFor="nome" className="block text-sm font-medium mb-1 text-zinc-300">
               Nome
             </label>
             <input
@@ -100,9 +122,7 @@ const Contato = () => {
               id="nome"
               name="nome"
               placeholder="Digite seu nome"
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
-                errors.nome ? "border-red-500" : ""
-              }`}
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${errors.nome ? "border-red-500" : ""}`}
               value={formData.nome}
               onChange={handleChange}
             />
@@ -110,10 +130,7 @@ const Contato = () => {
           </div>
 
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium mb-1 text-zinc-300"
-            >
+            <label htmlFor="email" className="block text-sm font-medium mb-1 text-zinc-300">
               E-mail
             </label>
             <input
@@ -121,9 +138,7 @@ const Contato = () => {
               id="email"
               name="email"
               placeholder="exemplo@dominio.com"
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
-                errors.email ? "border-red-500" : ""
-              }`}
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${errors.email ? "border-red-500" : ""}`}
               value={formData.email}
               onChange={handleChange}
             />
@@ -131,10 +146,7 @@ const Contato = () => {
           </div>
 
           <div>
-            <label
-              htmlFor="whatsapp"
-              className="block text-sm font-medium mb-1 text-zinc-300"
-            >
+            <label htmlFor="whatsapp" className="block text-sm font-medium mb-1 text-zinc-300">
               WhatsApp
             </label>
             <input
@@ -142,22 +154,15 @@ const Contato = () => {
               id="whatsapp"
               name="whatsapp"
               placeholder="(00) 00000-0000"
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
-                errors.whatsapp ? "border-red-500" : ""
-              }`}
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${errors.whatsapp ? "border-red-500" : ""}`}
               value={formData.whatsapp}
               onChange={handleChange}
             />
-            {errors.whatsapp && (
-              <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>
-            )}
+            {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>}
           </div>
 
           <div>
-            <label
-              htmlFor="mensagem"
-              className="block text-sm font-medium mb-1 text-zinc-300"
-            >
+            <label htmlFor="mensagem" className="block text-sm font-medium mb-1 text-zinc-300">
               Mensagem
             </label>
             <textarea
@@ -165,15 +170,11 @@ const Contato = () => {
               name="mensagem"
               rows="4"
               placeholder="Escreva sua mensagem aqui..."
-              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${
-                errors.mensagem ? "border-red-500" : ""
-              }`}
+              className={`${inputBaseClass} border-zinc-600 focus:ring-2 focus:ring-[#9D1A1A] ${errors.mensagem ? "border-red-500" : ""}`}
               value={formData.mensagem}
               onChange={handleChange}
             ></textarea>
-            {errors.mensagem && (
-              <p className="text-red-500 text-xs mt-1">{errors.mensagem}</p>
-            )}
+            {errors.mensagem && <p className="text-red-500 text-xs mt-1">{errors.mensagem}</p>}
           </div>
 
           <button
@@ -192,14 +193,25 @@ const Contato = () => {
           >
             Enviar
           </button>
+
+          {status === "success" && (
+            <div className="flex gap-2 items-center bg-green-600 text-white text-sm py-3 px-4 rounded-md">
+              <IconCheck /> Formulário enviado com sucesso.
+            </div>
+          )}
+          {status === "error" && (
+            <div className="flex gap-2 items-center bg-red-600 text-white text-sm py-3 px-4 rounded-md">
+              <IconX /> Ocorreu um erro ao enviar. Tente novamente.
+            </div>
+          )}
         </form>
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <BlockInfo
             icon={<IconMail size={40} stroke={1.5} />}
             title="Email"
-            desc="contato@exemplo.com"
-            link="mailto:contato@exemplo.com"
+            desc="contato@infinityschool.com.br"
+            link="mailto:contato@infinityschool.com.br"
           />
           <BlockInfo
             icon={<IconBrandWhatsapp size={40} stroke={1.5} />}

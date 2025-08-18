@@ -12,48 +12,41 @@ const Loading = ({ onFinish }) => {
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-    gsap.set([blockLogoRef.current, escLogoRef.current, byMompleRef.current], { opacity: 0 })
+    gsap.set(
+      [blockLogoRef.current, escLogoRef.current, byMompleRef.current],
+      { opacity: 0 }
+    )
 
+    // Animação de entrada dos logos
     tl.fromTo(
       blockLogoRef.current,
       { scale: 0.7, opacity: 0, filter: 'blur(10px)' },
-      { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.9 }
+      { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.5 }
     )
 
     tl.fromTo(
       escLogoRef.current,
       { x: 60, opacity: 0, filter: 'blur(10px)' },
-      { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.9 },
-      '-=0.4'
+      { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.5 },
+      '-=0.3'
     )
 
-    tl.to(byMompleRef.current, { opacity: 1, duration: 0.6 }, '-=0.6')
+    tl.to(byMompleRef.current, { opacity: 1, duration: 0.3 }, '-=0.3')
 
-    tl.to(
-      [blockLogoRef.current, escLogoRef.current],
-      {
-        scale: 1.04,
-        repeat: -1,
-        yoyo: true,
-        duration: 1.5,
-        ease: 'sine.inOut'
-      },
-      '+=0.4'
-    )
-
+    // Aguarda brevemente e faz o fade-out de tudo
     tl.to(
       containerRef.current,
       {
         opacity: 0,
         scale: 0.95,
         filter: 'blur(10px)',
-        duration: 0.8,
+        duration: 0.5,
         ease: 'power2.inOut',
         onComplete: () => {
           if (onFinish) onFinish()
         }
       },
-      '+=1.2'
+      '+=0.5'
     )
 
     return () => {

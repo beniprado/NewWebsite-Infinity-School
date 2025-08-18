@@ -5,7 +5,7 @@ import {
   getCursoDescricao1,
   getCursoDescricao2,
   getCursoImagemUrl,
-} from "../../services/api";
+} from "../../services/api"; // ajuste o caminho se necessário
 
 export default function CoursesCarousel() {
   const [courses, setCourses] = useState([]);
@@ -13,7 +13,7 @@ export default function CoursesCarousel() {
   useEffect(() => {
     async function loadCourses() {
       try {
-        const totalCursos = 6; // Ajuste esse número conforme a quantidade de cursos disponíveis na API
+        const totalCursos = 6; // ajuste conforme a quantidade real no banco
         const fetchedCourses = [];
 
         for (let id = 1; id <= totalCursos; id++) {
@@ -21,6 +21,8 @@ export default function CoursesCarousel() {
           const descricao1 = await getCursoDescricao1(id);
           const descricao2 = await getCursoDescricao2(id);
           const imagem = await getCursoImagemUrl(id);
+
+          console.log(`📌 Curso ${id}:`, { nome, descricao1, descricao2, imagem });
 
           if (
             nome?.nome_curso &&
@@ -39,7 +41,7 @@ export default function CoursesCarousel() {
 
         setCourses(fetchedCourses);
       } catch (err) {
-        console.error("Erro ao carregar cursos:", err);
+        console.error("❌ Erro ao carregar cursos:", err);
       }
     }
 
@@ -110,7 +112,7 @@ export default function CoursesCarousel() {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [courses]); // <- atualiza setas quando os cursos forem carregados
+  }, [courses]);
 
   return (
     <div className="relative">
@@ -142,33 +144,37 @@ export default function CoursesCarousel() {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-        {courses.map((course, index) => (
-          <div
-            key={index}
-            ref={index === 0 ? cardRef : null}
-            className="flex-shrink-0 flex flex-col gap-3 sm:gap-7 w-full md:w-[calc((100%/3)-1.33rem)] bg-white p-5 text-black rounded-3xl overflow-hidden shadow-lg"
-          >
-            <img
-              src={course.img}
-              alt={course.title}
-              className="w-full object-cover rounded-xl"
-              draggable="false"
-            />
-            <div className="p-6">
-              <h3 className="font-bold text-2xl sm:text-3xl max-w-xs">
-                {course.title}
-              </h3>
-              <div className="flex gap-3 mt-4 flex-wrap">
-                <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
-                  {course.category}
-                </span>
-                <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
-                  {course.duration}
-                </span>
+        {courses.length === 0 ? (
+          <p className="text-center w-full">Carregando cursos...</p>
+        ) : (
+          courses.map((course, index) => (
+            <div
+              key={index}
+              ref={index === 0 ? cardRef : null}
+              className="flex-shrink-0 flex flex-col gap-3 sm:gap-7 w-full md:w-[calc((100%/3)-1.33rem)] bg-white p-5 text-black rounded-3xl overflow-hidden shadow-lg"
+            >
+              <img
+                src={course.img}
+                alt={course.title}
+                className="w-full object-cover rounded-xl"
+                draggable="false"
+              />
+              <div className="p-6">
+                <h3 className="font-bold text-2xl sm:text-3xl max-w-xs">
+                  {course.title}
+                </h3>
+                <div className="flex gap-3 mt-4 flex-wrap">
+                  <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
+                    {course.category}
+                  </span>
+                  <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
+                    {course.duration}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );
