@@ -58,19 +58,19 @@ const Footer = () => {
           <div className={styleContainer}>
             <h3 className="text-2xl font-medium">Unidades</h3>
             <ul className={styleList}>
-              <Link to="/contato">
+              <Link to="/unidades">
               <li className="cursor-pointer">Salvador</li>
               </Link>
-              <Link to="/contato">
+              <Link to="/unidades">
                 <li className="cursor-pointer">Fortaleza</li>
               </Link>
-              <Link to="/contato">
+              <Link to="/unidades">
                 <li className="cursor-pointer">Belo Horizonte</li>
               </Link>
-              <Link to="/contato">
+              <Link to="/unidades">
                 <li className="cursor-pointer">Recife</li>
               </Link>
-              <Link to="/contato">
+              <Link to="/unidades">
                 <li className="cursor-pointer">São Paulo</li>
               </Link>
             </ul>
