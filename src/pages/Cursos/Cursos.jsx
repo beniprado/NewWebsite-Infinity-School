@@ -76,7 +76,7 @@ const cursosData = [
   {
     id: 5,
     img: kids,
-    title: "Curso Kids",
+    title: "Curso Kids ",
     about: "Curso presencial / 12 meses",
     description: "Programação, criação de games, design e youtuber",
   },

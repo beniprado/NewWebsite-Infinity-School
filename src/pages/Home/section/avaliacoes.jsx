@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IconArrowLeft, IconArrowRight, IconStarFilled } from "@tabler/icons-react";
+import avatar from "../../../assets/Avatar.png"
 
-function ReviewCard({ name, course, text, img }) {
+function ReviewCard({ name, course, text }) {
   return (
     <div className="flex flex-col gap-4 bg-white text-black w-full p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
       <div className="flex gap-1">
@@ -11,7 +12,7 @@ function ReviewCard({ name, course, text, img }) {
       </div>
       <p className="text-sm text-gray-700 flex-grow">{text}</p>
       <div className="flex items-center gap-4 mt-auto">
-        <img src={img} alt={name} className="w-12 h-12 rounded-full" />
+        <img src={avatar} alt={name} className="w-12 h-12 rounded-full" />
         <div className="flex flex-col">
           <span className="font-semibold text-gray-900">{name}</span>
           <span className="text-gray-500 text-sm">{course}</span>
@@ -113,7 +114,6 @@ const Avaliacoes = () => {
           </div>
         </div>
 
-        {/* Botões */}
         <button
           onClick={prevSlide}
           className="hidden sm:flex absolute -left-12 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition z-10 cursor-pointer"
@@ -128,7 +128,6 @@ const Avaliacoes = () => {
           <IconArrowRight stroke={2} size={28} color="black" />
         </button>
 
-        {/* Bolinhas */}
         <div className="flex justify-center mt-6 gap-2">
           {reviews
             .slice(0, reviews.length - cardsPerView + 1)
