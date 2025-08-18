@@ -17,36 +17,49 @@ const Loading = ({ onFinish }) => {
       { opacity: 0 }
     )
 
-    // Animação de entrada dos logos
+    // Entrada dos logos
     tl.fromTo(
       blockLogoRef.current,
       { scale: 0.7, opacity: 0, filter: 'blur(10px)' },
-      { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.5 }
+      { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.7 }
     )
 
     tl.fromTo(
       escLogoRef.current,
       { x: 60, opacity: 0, filter: 'blur(10px)' },
-      { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.5 },
-      '-=0.3'
+      { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.7 },
+      '-=0.4'
     )
 
-    tl.to(byMompleRef.current, { opacity: 1, duration: 0.3 }, '-=0.3')
+    tl.to(byMompleRef.current, { opacity: 1, duration: 0.5 }, '-=0.5')
 
-    // Aguarda brevemente e faz o fade-out de tudo
+    // Pulso (1.7s ida + 1.7s volta = 3.4s) com repeat 1
+    tl.to(
+      [blockLogoRef.current, escLogoRef.current],
+      {
+        scale: 1.04,
+        repeat: 1,
+        yoyo: true,
+        duration: 1.7,
+        ease: 'sine.inOut'
+      },
+      '+=0.3'
+    )
+
+    // Delay menor antes de sumir (reduzido para compensar)
     tl.to(
       containerRef.current,
       {
         opacity: 0,
         scale: 0.95,
         filter: 'blur(10px)',
-        duration: 0.5,
+        duration: 0.8,
         ease: 'power2.inOut',
         onComplete: () => {
           if (onFinish) onFinish()
         }
       },
-      '+=0.5'
+      '+=0.1'
     )
 
     return () => {
@@ -82,7 +95,7 @@ const Loading = ({ onFinish }) => {
           ref={byMompleRef}
           className="text-xs opacity-0 transition-opacity"
         >
-          By <strong>Momple</strong>
+          By <a href="https://www.momple.com.br/" target='_blank'><strong>Momple</strong></a>
         </span>
       </div>
     </section>

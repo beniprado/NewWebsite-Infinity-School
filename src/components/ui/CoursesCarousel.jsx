@@ -1,52 +1,57 @@
 import { useRef, useState, useEffect } from "react";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import {
-  getCursoNome,
-  getCursoDescricao1,
-  getCursoDescricao2,
-  getCursoImagemUrl,
-} from "../../services/api"; // ajuste o caminho se necessário
+import marketing from "../../assets/marketing.png";
+import progamacao from "../../assets/progamacao.png";
+import film from "../../assets/film.png";
+import fotografiaedesign from "../../assets/fotografiaedesign.png";
+import design from "../../assets/design.png";
+import kids from "../../assets/kids.png";
+// import {
+//   getCursoNome,
+//   getCursoDescricao1,
+//   getCursoDescricao2,
+//   getCursoImagemUrl,
+// } from "../../services/api";
 
 export default function CoursesCarousel() {
-  const [courses, setCourses] = useState([]);
-
-  useEffect(() => {
-    async function loadCourses() {
-      try {
-        const totalCursos = 6; // ajuste conforme a quantidade real no banco
-        const fetchedCourses = [];
-
-        for (let id = 1; id <= totalCursos; id++) {
-          const nome = await getCursoNome(id);
-          const descricao1 = await getCursoDescricao1(id);
-          const descricao2 = await getCursoDescricao2(id);
-          const imagem = await getCursoImagemUrl(id);
-
-          console.log(`📌 Curso ${id}:`, { nome, descricao1, descricao2, imagem });
-
-          if (
-            nome?.nome_curso &&
-            descricao1?.descricao_1 &&
-            descricao2?.descricao_2 &&
-            imagem?.imagem_curso_url
-          ) {
-            fetchedCourses.push({
-              title: nome.nome_curso,
-              category: descricao1.descricao_1,
-              duration: descricao2.descricao_2,
-              img: imagem.imagem_curso_url,
-            });
-          }
-        }
-
-        setCourses(fetchedCourses);
-      } catch (err) {
-        console.error("❌ Erro ao carregar cursos:", err);
-      }
-    }
-
-    loadCourses();
-  }, []);
+  const courses = [
+    {
+      title: "Programação Full Stack IA",
+      category: "PROGRAMAÇÃO",
+      duration: "13 MESES",
+      img: progamacao,
+    },
+    {
+      title: "Curso Design Full Stack IA",
+      category: "Design",
+      duration: "13 MESES",
+      img: design,
+    },
+    {
+      title: "Marketing Digital IA",
+      category: "MARKETING",
+      duration: "10 MESES",
+      img: marketing,
+    },
+    {
+      title: "Fotografia Design",
+      category: "FOTOGRAFIA",
+      duration: "9 MESES",
+      img: fotografiaedesign,
+    },
+    {
+      title: "Film Design",
+      category: "FILM",
+      duration: "13 MESES",
+      img: film,
+    },
+    {
+      title: "Kids",
+      category: "DESIGN",
+      duration: "12 MESES",
+      img: kids,
+    },
+  ];
 
   const carouselRef = useRef(null);
   const cardRef = useRef(null);
@@ -112,7 +117,7 @@ export default function CoursesCarousel() {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [courses]);
+  }, []);
 
   return (
     <div className="relative">
@@ -144,37 +149,33 @@ export default function CoursesCarousel() {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-        {courses.length === 0 ? (
-          <p className="text-center w-full">Carregando cursos...</p>
-        ) : (
-          courses.map((course, index) => (
-            <div
-              key={index}
-              ref={index === 0 ? cardRef : null}
-              className="flex-shrink-0 flex flex-col gap-3 sm:gap-7 w-full md:w-[calc((100%/3)-1.33rem)] bg-white p-5 text-black rounded-3xl overflow-hidden shadow-lg"
-            >
-              <img
-                src={course.img}
-                alt={course.title}
-                className="w-full object-cover rounded-xl"
-                draggable="false"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-2xl sm:text-3xl max-w-xs">
-                  {course.title}
-                </h3>
-                <div className="flex gap-3 mt-4 flex-wrap">
-                  <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
-                    {course.category}
-                  </span>
-                  <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
-                    {course.duration}
-                  </span>
-                </div>
+        {courses.map((course, index) => (
+          <div
+            key={index}
+            ref={index === 0 ? cardRef : null}
+            className="flex-shrink-0 flex flex-col gap-3 sm:gap-7 w-full md:w-[calc((100%/3)-1.33rem)] bg-white p-5 text-black rounded-3xl overflow-hidden shadow-lg"
+          >
+            <img
+              src={course.img}
+              alt={course.title}
+              className="w-full object-cover rounded-xl"
+              draggable="false"
+            />
+            <div className="p-6">
+              <h3 className="font-bold text-2xl sm:text-3xl max-w-xs">
+                {course.title}
+              </h3>
+              <div className="flex gap-3 mt-4 flex-wrap">
+                <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
+                  {course.category}
+                </span>
+                <span className="bg-neutral-900 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
+                  {course.duration}
+                </span>
               </div>
             </div>
-          ))
-        )}
+          </div>
+        ))}
       </div>
     </div>
   );
