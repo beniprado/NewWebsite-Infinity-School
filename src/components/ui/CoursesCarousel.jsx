@@ -1,51 +1,50 @@
 import { useRef, useState, useEffect } from "react";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import marketing from "../../assets/marketing.png";
-import progamacao from "../../assets/progamacao.png";
-import film from "../../assets/film.png";
-import fotografiaedesign from "../../assets/fotografiaedesign.png";
-import design from "../../assets/design.png";
-import kids from "../../assets/kids.png";
+import {
+  getCursoNome,
+  getCursoDescricao1,
+  getCursoDescricao2,
+  getCursoImagemUrl,
+} from "../../services/api";
 
 export default function CoursesCarousel() {
-  const courses = [
-    {
-      title: "Programação Full Stack IA",
-      category: "PROGRAMAÇÃO",
-      duration: "13 MESES",
-      img: progamacao,
-    },
-    {
-      title: "Curso Design Full Stack IA",
-      category: "Design",
-      duration: "13 MESES",
-      img: design,
-    },
-    {
-      title: "Marketing Digital IA",
-      category: "MARKETING",
-      duration: "10 MESES",
-      img: marketing,
-    },
-    {
-      title: "Fotografia Design",
-      category: "FOTOGRAFIA",
-      duration: "9 MESES",
-      img: fotografiaedesign,
-    },
-    {
-      title: "Film Design",
-      category: "FILM",
-      duration: "13 MESES",
-      img: film,
-    },
-    {
-      title: "Kids",
-      category: "DESIGN",
-      duration: "12 MESES",
-      img: kids,
-    },
-  ];
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    async function loadCourses() {
+      try {
+        const totalCursos = 6; // Ajuste esse número conforme a quantidade de cursos disponíveis na API
+        const fetchedCourses = [];
+
+        for (let id = 1; id <= totalCursos; id++) {
+          const nome = await getCursoNome(id);
+          const descricao1 = await getCursoDescricao1(id);
+          const descricao2 = await getCursoDescricao2(id);
+          const imagem = await getCursoImagemUrl(id);
+
+          if (
+            nome?.nome_curso &&
+            descricao1?.descricao_1 &&
+            descricao2?.descricao_2 &&
+            imagem?.imagem_curso_url
+          ) {
+            fetchedCourses.push({
+              title: nome.nome_curso,
+              category: descricao1.descricao_1,
+              duration: descricao2.descricao_2,
+              img: imagem.imagem_curso_url,
+            });
+          }
+        }
+
+        setCourses(fetchedCourses);
+      } catch (err) {
+        console.error("Erro ao carregar cursos:", err);
+      }
+    }
+
+    loadCourses();
+  }, []);
 
   const carouselRef = useRef(null);
   const cardRef = useRef(null);
@@ -111,7 +110,7 @@ export default function CoursesCarousel() {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [courses]); // <- atualiza setas quando os cursos forem carregados
 
   return (
     <div className="relative">

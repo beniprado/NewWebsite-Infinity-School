@@ -1,6 +1,7 @@
 import React from "react"
 import BtnCta from "./BtnCta"
 import qualidade from "../../assets/qualidade.mp4"
+import { Link } from "react-router-dom"
 
 const Cta = () => {
   return (
@@ -17,7 +18,9 @@ const Cta = () => {
             curso e dê o passo que vai mudar a sua vida.
           </p>
         </div>
-        <BtnCta title={"Garantir minha vaga"} py={"3"} px={"10"} font={"2xl"} />
+        <Link to="/contato">
+          <BtnCta title={"Garantir minha vaga"} py={"3"} px={"10"} font={"2xl"} />
+        </Link>
       </div>
     </section>
   )
