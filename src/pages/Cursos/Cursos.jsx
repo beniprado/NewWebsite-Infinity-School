@@ -7,6 +7,7 @@ import fotografiaedesign from "../../assets/fotografiaedesign.png"
 import film from "../../assets/film.png"
 import kids from "../../assets/kids.png"
 import BtnCta from "../../components/ui/BtnCta"
+import Gamificacao from "./gamificacao"
 
 export function ContainerCursos({ title, about, description, img }) {
   return (
@@ -96,6 +97,7 @@ const Cursos = () => {
             img={curso.img}
           />
         ))}
+        <Gamificacao />
       </div>
     </section>
   )
