@@ -19,7 +19,7 @@
 
 ## 🔗 Acesso ao Projeto
 
-- **Deploy:** [link do site publicado]  
+- **Deploy:** [\[link do site publicado\] ](https://infinityschool.vercel.app/) 
 - **Repositório:** Este repositório  
 
 ---
